@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import fetchRequests from '../fetch-requests.js';
 import ReservationContainer from './reservation-container/reservation-container.js';
+import ReservationForm from './reservation-form/reservation-form.js';
 
 class App extends Component {
   constructor() {
@@ -23,12 +24,16 @@ class App extends Component {
       .catch(error => this.setState({error: error}))
   }
 
+  submitNewReservation = (newRes) => {
+    this.setState({reservations: [...this.state.reservations, newRes]})
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+        < ReservationForm submitNewReservation={this.submitNewReservation}/>
         </div>
         <div className='resy-container'>
         < ReservationContainer reservations={this.state.reservations} />
