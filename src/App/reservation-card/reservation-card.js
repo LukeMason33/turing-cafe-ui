@@ -5,7 +5,7 @@ function ReservationCard (props) {
   console.log(props);
   return (
     <article className="reservation-card" id={props.reservation.id}>
-      <h1 clasName="res-name">{props.reservation.name}</h1>
+      <h1 className="res-name">{props.reservation.name}</h1>
       <h2 className="res-date">{props.reservation.date}</h2>
       <h2 className="res-time">{props.reservation.time}</h2>
       <h2 className="res-guests">{props.reservation.number}</h2>

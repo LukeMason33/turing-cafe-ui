@@ -1,0 +1,5 @@
+.reservation-card {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
