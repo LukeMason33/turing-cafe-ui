@@ -1,9 +1,11 @@
 import React from 'react';
 
 function ReservationCard (props) {
-  const {reservations} = props.reservation;
+  const {reservation} = props.reservation;
+  console.log(reservation);
   return (
-    <article className="reservation-card" id={reservation.id}
+    <article className="reservation-card" id={reservation.id}>
+    </article>
   )
 }
 
