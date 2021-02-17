@@ -23,6 +23,13 @@ class App extends Component {
       .catch(error => this.setState({error: error}))
   }
 
+  createReservationCards() {
+    this.state.reservations.map(reservation => {
+      return < ReservationCard reservation={reservation} />
+
+    })
+  }
+
   render() {
     return (
       <div className="App">

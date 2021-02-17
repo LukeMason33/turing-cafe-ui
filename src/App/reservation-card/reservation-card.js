@@ -1,8 +1,9 @@
 import React from 'react';
 
 function ReservationCard (props) {
-  const {reservations} = props.reservations;
+  const {reservations} = props.reservation;
   return (
+    <article className="reservation-card" id={reservation.id}
   )
 }
 
