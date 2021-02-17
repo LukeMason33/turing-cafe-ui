@@ -1,8 +1,9 @@
 import React from 'react';
 
 function ReservationCard (props) {
-  console.log(props);
-  return ('hehe')
+  const {reservations} = props.reservations;
+  return (
+  )
 }
 
 export default ReservationCard;
