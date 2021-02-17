@@ -22,19 +22,33 @@ class ReservationForm extends Component {
       name: '',
       date: '',
       time: '',
-      number: ''
+      number: '',
+      error: ''
     })
   }
 
   onSubmit = (event) => {
-    event.preventDefault();
-    const newRes = {...this.state};
-    this.props.submitNewReservation(newRes);
-    this.clearInputs();
+    this.setState({error: ''});
+    if(
+      !this.state.name ||
+      !this.state.date ||
+      !this.state.time ||
+      !this.state.name
+    ) {
+      event.preventDefault()
+      this.setState({error: 'You must fill in all fields properly before submitting.'})
+    } else {
+      event.preventDefault();
+      const newRes = {...this.state};
+      this.props.submitNewReservation(newRes);
+      this.clearInputs();
   }
+}
 
   render() {
     return (
+    <>     
+      {this.state.error && <h2 className='error'>{this.state.error}</h2>}
       <form className="res-form">
         <input
           type="text"
@@ -66,6 +80,7 @@ class ReservationForm extends Component {
         </input>
         <button className="make-res-btn" onClick={event => this.onSubmit(event)}>Make Reservation</button>
       </form>
+    </>
     )
   }
 }
