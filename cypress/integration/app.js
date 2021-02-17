@@ -49,4 +49,9 @@ describe('Turing Cafe', () => {
     cy.get('.time-input').should('contain', '')
     cy.get('.guest-input').should('contain', '')
   })
+
+  it('Should not be able to submit a reservation with empty input fields', () => {
+    cy.get('form button').click()
+    cy.get('.error')
+  })
 })
