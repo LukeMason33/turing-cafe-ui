@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   submitNewReservation = (newRes) => {
+    newRes.id = this.state.reservations.length;
     this.setState({reservations: [...this.state.reservations, newRes]})
   }
 
