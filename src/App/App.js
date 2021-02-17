@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   submitNewReservation = (newRes) => {
-    newRes.id = this.state.reservations.length;
+    newRes.id = this.state.reservations.length + 1;
     this.setState({reservations: [...this.state.reservations, newRes]})
   }
 
@@ -37,7 +37,8 @@ class App extends Component {
         < ReservationForm submitNewReservation={this.submitNewReservation}/>
         </div>
         <div className='resy-container'>
-        < ReservationContainer reservations={this.state.reservations} />
+        {this.state.error && <h2 className='error'>{this.state.error}</h2>}
+        {!this.state.error && <ReservationContainer reservations={this.state.reservations} />}
         </div>
       </div>
     )
