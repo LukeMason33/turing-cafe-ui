@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import fetchRequests from '../fetch-requests.js';
-import ReservationCard from './reservation-card/reservation-card.js';
+import ReservationContainer from './reservation-container/reservation-container.js';
 
 class App extends Component {
   constructor() {
@@ -24,12 +24,6 @@ class App extends Component {
   }
 
   render() {
-    const createReservationCards = () => {
-      this.state.reservations.map(reservation => {
-        return < ReservationCard reservation={reservation} />
-      })
-    }
-
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -37,7 +31,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          {createReservationCards()}
+        < ReservationContainer reservations={this.state.reservations} />
         </div>
       </div>
     )

@@ -1,10 +1,15 @@
 import React from 'react';
+import './reservation-card.css';
 
 function ReservationCard (props) {
-  const {reservation} = props.reservation;
-  console.log(reservation);
+  console.log(props);
   return (
-    <article className="reservation-card" id={reservation.id}>
+    <article className="reservation-card" id={props.reservation.id}>
+      <h1 clasName="res-name">{props.reservation.name}</h1>
+      <h2 className="res-date">{props.reservation.date}</h2>
+      <h2 className="res-time">{props.reservation.time}</h2>
+      <h2 className="res-guests">{props.reservation.number}</h2>
+      <button className="cancel-res-button">Cancel</button>
     </article>
   )
 }
